@@ -13,7 +13,7 @@ is reasoning-only.
 ## Package Location
 
 The package lives at:
-`/Workspace/Users/<USER>/codex-phone-a-friend/phone_a_friend/`
+`/Workspace/Users/<USER>/genie-ai-architect/phone_a_friend/`
 
 Replace `<USER>` with the current workspace user's email/username.
 
@@ -37,7 +37,7 @@ Load (or replace) project context from the given workspace path.
 Execution (via `executeCode`):
 ```python
 import sys
-sys.path.insert(0, "/Workspace/Users/<USER>/codex-phone-a-friend")
+sys.path.insert(0, "/Workspace/Users/<USER>/genie-ai-architect")
 from phone_a_friend import load_project
 project_ctx = load_project("/Workspace<path>")
 ```
@@ -70,7 +70,7 @@ context first with `ask ai context /path`.
 Execution (via `executeCode`):
 ```python
 import sys
-sys.path.insert(0, "/Workspace/Users/<USER>/codex-phone-a-friend")
+sys.path.insert(0, "/Workspace/Users/<USER>/genie-ai-architect")
 from phone_a_friend import ask_architect
 print(ask_architect("<question>", context=project_ctx, mode="<strategic|tactical>"))
 ```
