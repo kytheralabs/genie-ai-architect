@@ -97,3 +97,7 @@ If cold start hits `ModuleNotFoundError: databricks_openai`, run
 4. Save
 
 Genie Code will pick up the instructions immediately in new chat sessions.
+
+> **Note:** This is the self-contained Option B. If you prefer the skill-based
+> Option A (see README), you must also add a **Custom Skills** discovery block
+> to your `.assistant_instructions.md` — see the README for details.

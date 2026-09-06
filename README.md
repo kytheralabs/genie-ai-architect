@@ -309,14 +309,27 @@ ask ai flush                            ← clear context
 
 ### Option A: Install the skill (recommended)
 
-Copy the `skill/SKILL.md` file to your Genie Code skills directory:
+**Step 1.** Copy the `skill/SKILL.md` file to your Genie Code skills directory:
 
 ```
 /Workspace/Users/<you>/.assistant/skills/genie-ai-architect/SKILL.md
 ```
 
-Genie Code auto-discovers skills and loads them when relevant — no manual
-pasting required. The skill activates whenever you type `ask ai`.
+**Step 2.** Add the following block to your `.assistant_instructions.md`
+(create the file at `/Workspace/Users/<you>/.assistant_instructions.md` if it
+doesn't exist). This tells Genie Code to discover and load custom skills:
+
+```markdown
+## Custom Skills
+
+Custom skills live in `.assistant/skills/<skill-name>/SKILL.md`. At the start
+of each session, check this directory for any custom skills and load them when
+the user's message matches a skill's trigger condition. Do not rely solely on
+the built-in Skill Registry.
+```
+
+Once both steps are done, the skill activates whenever you type `ask ai` —
+no manual pasting required.
 
 ### Option B: Manual instructions (alternative)
 
