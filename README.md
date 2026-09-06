@@ -110,10 +110,10 @@ via notebook-native Databricks auth.
 
 ### Step 1: Copy the folder
 
-Copy the entire `codex-phone-a-friend/` folder to the target workspace:
+Copy the entire `genie-ai-architect/` folder to the target workspace:
 
 ```
-/Workspace/Users/<you>/codex-phone-a-friend/
+/Workspace/Users/<you>/genie-ai-architect/
 ├── README.md
 ├── genie_setup.md           ← manual instructions template (alternative to skill)
 ├── skill/
@@ -141,7 +141,7 @@ dbutils.library.restartPython()
 
 ```python
 import sys
-sys.path.insert(0, "/Workspace/Users/<you>/codex-phone-a-friend")
+sys.path.insert(0, "/Workspace/Users/<you>/genie-ai-architect")
 
 from phone_a_friend import ask_ai, phone_a_friend, ProjectContext, ask_architect
 ```

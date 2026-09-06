@@ -14,7 +14,7 @@ the `ask ai` commands in Genie Code.
 ### Ask Codex — Phone a Friend
 
 The `phone_a_friend` package is installed at:
-`/Workspace/Users/<YOUR_USERNAME>/codex-phone-a-friend/phone_a_friend/`
+`/Workspace/Users/<YOUR_USERNAME>/genie-ai-architect/phone_a_friend/`
 
 Three command forms:
 
@@ -57,7 +57,7 @@ Execution patterns (always via executeCode):
 - **Context load:**
   ```python
   import sys
-  sys.path.insert(0, "/Workspace/Users/<YOUR_USERNAME>/codex-phone-a-friend")
+  sys.path.insert(0, "/Workspace/Users/<YOUR_USERNAME>/genie-ai-architect")
   from phone_a_friend import load_project
   project_ctx = load_project("/Workspace<path>")
   ```
@@ -71,7 +71,7 @@ Execution patterns (always via executeCode):
 - **Question:**
   ```python
   import sys
-  sys.path.insert(0, "/Workspace/Users/<YOUR_USERNAME>/codex-phone-a-friend")
+  sys.path.insert(0, "/Workspace/Users/<YOUR_USERNAME>/genie-ai-architect")
   from phone_a_friend import ask_architect
   print(ask_architect("<question>", context=project_ctx, mode="<strategic|tactical>"))
   ```
