@@ -1,7 +1,7 @@
-# Genie Code Integration — `ask codex` Instructions
+# Genie Code Integration — `ask ai` Instructions 
 
 Copy the block below into your `.assistant_instructions.md` file to enable
-the `ask codex` commands in Genie Code.
+the `ask ai` commands in Genie Code.
 
 > **Before pasting:** replace `<YOUR_USERNAME>` with your Databricks workspace
 > username (e.g. `lance@kytheralabs.com`).
@@ -18,15 +18,15 @@ The `phone_a_friend` package is installed at:
 
 Three command forms:
 
-1. **`ask codex context /path/to/project`** — load (or replace) project context
+1. **`ask ai context /path/to/project`** — load (or replace) project context
    from the given workspace path. Runs `load_project(path)` and stores the
    result as `project_ctx`. Confirm what was loaded (section counts) and that
    the context is ready.
 
-2. **`ask codex flush`** — clear the loaded context. Set `project_ctx = None`.
+2. **`ask ai flush`** — clear the loaded context. Set `project_ctx = None`.
    Confirm context was cleared.
 
-3. **`ask codex [arch|dev] [question]`** — ask a question using the current
+3. **`ask ai [arch|dev] [question]`** — ask a question using the current
    `project_ctx`.
    - `arch` — strategic mode (senior architect lens: design, tradeoffs, phased
      refactoring)
@@ -34,16 +34,16 @@ Three command forms:
      details)
    - omitted — defaults to strategic
    - If no context has been loaded (or it was flushed), tell the user to load
-     context first with `ask codex context /path`.
+     context first with `ask ai context /path`.
 
 Examples:
-- `ask codex context /Users/<YOUR_USERNAME>/my-project` → loads project context
-- `ask codex what is the tech debt?` → strategic question against loaded context
-- `ask codex dev review error handling` → tactical question against loaded context
-- `ask codex flush` → clears context so a new project can be loaded
-- `ask codex context /Users/<YOUR_USERNAME>/other-project` → replaces context
+- `ask ai context /Users/<YOUR_USERNAME>/my-project` → loads project context
+- `ask ai what is the tech debt?` → strategic question against loaded context
+- `ask ai dev review error handling` → tactical question against loaded context
+- `ask ai flush` → clears context so a new project can be loaded
+- `ask ai context /Users/<YOUR_USERNAME>/other-project` → replaces context
 
-Parsing: strip "ask codex", then check first token: "context" → load path,
+Parsing: strip "ask ai", then check first token: "context" → load path,
 "flush" → clear, "arch"/"dev" → set mode + rest is question, otherwise →
 strategic + entire remainder is question.
 
@@ -77,7 +77,7 @@ Execution patterns (always via executeCode):
   ```
 
 If `project_ctx` was loaded in a prior executeCode call this session, reuse
-it — don't reload unless the user runs `ask codex context` again.
+it — don't reload unless the user runs `ask ai context` again.
 
 If cold start hits `ModuleNotFoundError: databricks_openai`, run
 `%pip install -U databricks-openai "typing_extensions>=4.12.0"` first, then

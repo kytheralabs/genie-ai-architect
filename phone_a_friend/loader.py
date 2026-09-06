@@ -1,6 +1,6 @@
 """Auto-discover and load project context from a workspace path.
 
-One call replaces the manual add_directory / add_workspace_notebook ceremony:
+One call replaces the manual add_directory / add_workspace_notebook ceremony: 
 
     from phone_a_friend import load_project, ask_architect
 

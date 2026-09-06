@@ -1,4 +1,4 @@
-"""phone_a_friend: Portable Databricks AI Gateway advisory package.
+"""phone_a_friend: Portable Databricks AI Gateway advisory package. 
 
 Drop this folder into any Databricks workspace to give notebooks a
 "phone a friend" capability — consult a stronger reasoning model through

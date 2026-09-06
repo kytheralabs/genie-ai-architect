@@ -1,4 +1,4 @@
-"""Databricks-native AI Gateway client.
+"""Databricks-native AI Gateway client. 
 
 Singleton DatabricksOpenAI client with notebook-native auth.
 Single entry point for all AI calls through Databricks AI Gateway.

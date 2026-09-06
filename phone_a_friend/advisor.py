@@ -1,4 +1,4 @@
-"""Databricks-native Codex 'phone a friend' helper.
+"""Databricks-native Codex 'phone a friend' helper. 
 
 This module lets Genie Code call a stronger reasoning model through AI Gateway
 without changing Genie's execution-first workflow.  The helper is intentionally

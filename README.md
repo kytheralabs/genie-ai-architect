@@ -1,4 +1,4 @@
-# codex-phone-a-friend
+# genie-ai-architect
 
 A portable Databricks-native package that gives Genie Code a "phone a friend"
 capability — consult a stronger reasoning model through AI Gateway while
@@ -115,11 +115,15 @@ Copy the entire `codex-phone-a-friend/` folder to the target workspace:
 ```
 /Workspace/Users/<you>/codex-phone-a-friend/
 ├── README.md
+├── genie_setup.md           ← manual instructions template (alternative to skill)
+├── skill/
+│   └── SKILL.md              ← Genie Code skill (auto-loaded, recommended)
 └── phone_a_friend/          ← importable Python package
     ├── __init__.py
     ├── client.py             ← singleton AI Gateway client + ask_ai()
     ├── prompts.py            ← system prompt library
     ├── context.py            ← ProjectContext for building context
+    ├── loader.py             ← load_project() auto-discovery
     ├── reviewer.py           ← ask_architect, review_code, review_sql, etc.
     └── advisor.py            ← PhoneAFriend class + phone_a_friend()
 ```
@@ -293,19 +297,31 @@ into any review function.  No manual file listing required.
 
 ## Genie Code Integration
 
-You can set up `ask codex` commands so Genie Code understands natural-language
-shortcuts like:
+The package ships with a **Genie Code skill** that automatically enables
+`ask ai` commands:
 
 ```
-ask codex context /Users/me/my-project
-ask codex what is the tech debt?
-ask codex dev review error handling
-ask codex flush
+ask ai context /Users/me/my-project    ← load project context
+ask ai what is the tech debt?           ← ask a question (strategic)
+ask ai dev review error handling        ← ask a question (tactical)
+ask ai flush                            ← clear context
 ```
 
-See **[genie_setup.md](genie_setup.md)** for a copy-paste template to add to
-your `.assistant_instructions.md`.  Replace `<YOUR_USERNAME>` with your
-Databricks username and paste — Genie Code picks it up immediately.
+### Option A: Install the skill (recommended)
+
+Copy the `skill/SKILL.md` file to your Genie Code skills directory:
+
+```
+/Workspace/Users/<you>/.assistant/skills/genie-ai-architect/SKILL.md
+```
+
+Genie Code auto-discovers skills and loads them when relevant — no manual
+pasting required. The skill activates whenever you type `ask ai`.
+
+### Option B: Manual instructions (alternative)
+
+If you prefer, see **[genie_setup.md](genie_setup.md)** for a copy-paste
+template to add to your `.assistant_instructions.md`.
 
 ## Changing the model
 

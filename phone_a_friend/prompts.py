@@ -1,4 +1,4 @@
-"""Reusable system prompts and prompt-composition helpers."""
+"""Reusable system prompts and prompt-composition helpers. """
 
 STANDARD_RESPONSE_FORMAT = """
 Return markdown with exactly these sections and headings:

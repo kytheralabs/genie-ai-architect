@@ -1,4 +1,4 @@
-"""High-level review and advisory functions.
+"""High-level review and advisory functions. 
 
 Each function gathers optional context, builds a prompt, calls ask_ai(),
 and returns structured markdown.

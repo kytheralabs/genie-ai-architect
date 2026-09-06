@@ -1,4 +1,4 @@
-"""Collect project context for AI prompts.
+"""Collect project context for AI prompts. 
 
 ProjectContext gathers code, SQL, schemas, notebooks, and free-form text
 into a single markdown document suitable for prepending to an AI call.
